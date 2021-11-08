@@ -16,6 +16,11 @@ Users.append(User("Abner Cardona", "M", "admin", "admin@ipc1.coma", " admin@ipc1
 Users.append(User("Nathan Valdez", "M", "VosNathan", "nathanvaldez413@gmail.com", "admin"))
 
 
+@app.route('/')
+def Home():
+    
+    return "<h1>Hola Mundo</h1>"
+
 @app.route('/NewUser', methods=['POST'])
 def NewUser():
 
