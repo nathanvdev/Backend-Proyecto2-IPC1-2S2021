@@ -1,4 +1,4 @@
-from flask import Flask, json,jsonify,request
+from flask import Flask, json, jsonify, request
 from flask_cors import CORS
 from User import User, Post
 import re
