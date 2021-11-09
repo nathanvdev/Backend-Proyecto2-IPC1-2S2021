@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER']="./"
 CORS(app)
 
-Users.append(User("Abner Cardona", "M", "admin", "admin@ipc1.coma", " admin@ipc1"))
+Users.append(User("Abner Cardona", "M", "admin", "admin@ipc1.coma", "admin@ipc1"))
 Users.append(User("Nathan Valdez", "M", "VosNathan", "nathanvaldez413@gmail.com", "admin"))
 
 
@@ -34,8 +34,8 @@ def NewUser():
     Email = request.json['email']
     Password = request.json['password']
 
-    Characters = "^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%#?&])[A-Za-z\d@$!#%?&]{8,20}$"
-    pat = re.compile(Characters)
+    reg = "^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%#?&])[A-Za-z\d@$!#%?&]{8,20}$"
+    pat = re.compile(reg)
     Agree = re.search(pat,Password)
     if Agree:
         print('Validacion Aprovada')   
