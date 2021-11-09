@@ -149,14 +149,13 @@ def NewPost():
    
 @app.route('/UploadUsers', methods=['POST'])
 def UploadUsers():
-
-    
     global Users
 
     global file
     
     file = request.json['UploadUsersp']
     load = json.loads(file)
+    print(load) 
 
     for NewUser in load:
 
@@ -165,8 +164,11 @@ def UploadUsers():
         Username = NewUser['username']
         Email = NewUser['email']
         Password = NewUser['password']
-
-        Users.append(User(Name, Gender, Username, Email, Password))
+        print(Name, Gender, Username, Email, Password)
+        
+        NuevoUsuario = User(Name, Gender, Username, Email, Password)
+        
+        Users.append(NuevoUsuario)
 
     return jsonify({"mensaje": "Usuarios cargados"})
 
