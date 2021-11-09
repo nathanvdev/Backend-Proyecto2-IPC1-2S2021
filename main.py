@@ -156,6 +156,7 @@ def NewPost():
 @app.route('/UploadUsers', methods=['POST'])
 def UploadUsers():
 
+    global User
     global Users
     global file
     
