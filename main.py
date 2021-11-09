@@ -150,7 +150,7 @@ def NewPost():
 @app.route('/UploadUsers', methods=['POST'])
 def UploadUsers():
 
-    print(callable(User))
+    
     global Users
 
     global file
@@ -159,8 +159,6 @@ def UploadUsers():
     load = json.loads(file)
 
     for NewUser in load:
-
-        
 
         Name = NewUser['name']
         Gender = NewUser['gender']
