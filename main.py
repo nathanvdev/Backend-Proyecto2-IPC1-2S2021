@@ -157,7 +157,7 @@ def NewPost():
 def UploadUsers():
 
     global Users
-    global User
+    
 
     global file
     
