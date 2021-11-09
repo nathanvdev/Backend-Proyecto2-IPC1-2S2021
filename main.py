@@ -152,7 +152,6 @@ def UploadUsers():
 
     print(callable(User))
     global Users
-    global User
 
     global file
     
@@ -160,8 +159,9 @@ def UploadUsers():
     load = json.loads(file)
 
     for NewUser in load:
+
         global User
-        
+
         Name = NewUser['name']
         Gender = NewUser['gender']
         Username = NewUser['username']
