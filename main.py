@@ -1,11 +1,12 @@
 from flask import Flask, json, jsonify, request
 from flask_cors import CORS
 from User import User, Post
-import re
+
 
 
 Users = []
 file = []
+
 
 
 app = Flask(__name__)
@@ -145,29 +146,29 @@ def NewPost():
     else:
         return jsonify({"mensaje": "no se encontro el dato para actualizar"})
     
+   
 @app.route('/UploadUsers', methods=['POST'])
 def UploadUsers():
 
-    
+    print(callable(User))
     global Users
     global User
-    
+
     global file
     
     file = request.json['UploadUsersp']
     load = json.loads(file)
 
     for NewUser in load:
-
+        global User
+        
         Name = NewUser['name']
         Gender = NewUser['gender']
         Username = NewUser['username']
         Email = NewUser['email']
         Password = NewUser['password']
 
-        NuevoUsuario = User(Name, Gender, Username, Email, Password)
-        
-        Users.append(NuevoUsuario)
+        Users.append(User(Name, Gender, Username, Email, Password))
 
     return jsonify({"mensaje": "Usuarios cargados"})
 
