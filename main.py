@@ -157,7 +157,7 @@ def NewPost():
 def UploadUsers():
 
     global Users
-    
+    global User
 
     global file
     
@@ -171,8 +171,10 @@ def UploadUsers():
         Username = NewUser['username']
         Email = NewUser['email']
         Password = NewUser['password']
+
+        NuevoUsuario = User(Name, Gender, Username, Email, Password)
         
-        Users.append(User(Name, Gender, Username, Email, Password))
+        Users.append(NuevoUsuario)
 
     return jsonify({"mensaje": "Usuarios cargados"})
 
