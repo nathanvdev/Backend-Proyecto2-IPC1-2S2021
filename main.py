@@ -34,14 +34,6 @@ def NewUser():
     Email = request.json['email']
     Password = request.json['password']
 
-    reg = "^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[@$!%#?&])[A-Za-z\d@$!#%?&]{8,20}$"
-    pat = re.compile(reg)
-    Agree = re.search(pat,Password)
-    if Agree:
-        print('Validacion Aprovada')   
-    else:
-        return jsonify({'mensaje':'La Contraseña debe contener 8 caracteres, un simbolo y un numero',})
-    
     if Name == '' or Username == '' or Email == '' or Password == '':
         return jsonify({'mensaje': 'Por favor llenar todos los campos'})
 
@@ -156,8 +148,10 @@ def NewPost():
 @app.route('/UploadUsers', methods=['POST'])
 def UploadUsers():
 
-    global User
+    
     global Users
+    global User
+    
     global file
     
     file = request.json['UploadUsersp']
