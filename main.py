@@ -160,7 +160,7 @@ def UploadUsers():
 
     for NewUser in load:
 
-        global User
+        
 
         Name = NewUser['name']
         Gender = NewUser['gender']
